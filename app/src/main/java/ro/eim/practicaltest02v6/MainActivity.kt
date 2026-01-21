@@ -1,9 +1,11 @@
 package ro.eim.practicaltest02v6
 
+import ClientAsyncTask
 import ServerThread
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -27,6 +29,17 @@ class MainActivity : AppCompatActivity() {
 
             var serverThread = ServerThread(intPort, request)
             serverThread.startServer()
+        }
+
+        val getWeatherButton = findViewById<View>(R.id.send_request).setOnClickListener {
+            val clientButton = findViewById<TextView>(R.id.result)
+            val serverAddressEditText = findViewById<EditText>(R.id.server_address)
+            val serverPort = findViewById<EditText>(R.id.server_port_client)
+            val clientAsyncTask = ClientAsyncTask(clientButton)
+            clientAsyncTask.execute(
+                serverAddressEditText.text.toString(),
+                serverPort!!.text.toString()
+            )
         }
     }
 }
