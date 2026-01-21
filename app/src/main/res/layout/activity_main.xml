@@ -7,13 +7,102 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="vertical"
+        >
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/blue"
+        app:title="PracticalTest02v6"
+        app:titleTextColor="@android:color/white"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+        <TextView
+            android:id="@+id/server"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SERVER"
+            android:layout_weight="1"
+            android:layout_gravity="center_horizontal"
+            />
+
+        <EditText
+            android:id="@+id/server_port"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Server Port"
+            android:layout_weight="1"
+            android:layout_gravity="center_horizontal"
+            />
+
+        <Button
+            android:id="@+id/connect_server"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Connect Server" />
+
+        <TextView
+            android:id="@+id/client"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CLIENT"
+            android:layout_weight="1"
+            android:layout_gravity="center_horizontal"
+            />
+
+        <EditText
+            android:id="@+id/server_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Server Address"
+            android:layout_weight="1"
+            android:layout_gravity="center_horizontal"
+            />
+
+        <EditText
+            android:id="@+id/server_port_client"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Server Port"
+            android:layout_weight="1"
+            android:layout_gravity="center_horizontal"
+            />
+
+        <EditText
+            android:id="@+id/data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="data"
+            android:layout_weight="1"
+            android:layout_gravity="center_horizontal"
+            />
+
+        <Button
+            android:id="@+id/send_request"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Send request" />
+
+        <TextView
+            android:id="@+id/result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="RESULT"
+            android:layout_weight="1"
+            android:layout_gravity="center_horizontal"
+            />
+
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
